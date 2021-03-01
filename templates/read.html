@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet"></link>
+</head>
+<body>
+  <header>
+    <h1>
+      <a href="/">Reddit Reader</a>
+    </h1>
+
+    <h3>Reading:
+      {% for select in selects%}
+        r/{{select}}
+      {% endfor%}
+    </h3>
+  </header>
+  <main>
+  {% for comment in comments%}
+  <div>
+    <a href="{{comment.url}}">
+      <h3>{{comment.content}}</h3><br>
+    </a>
+    <h4>{{comment.upvote}} upvotes • r/{{comment.input}}</h4>
+    <hr />
+  </div>
+  {% endfor %}
+  </main>
+</body>
+
+</html>
